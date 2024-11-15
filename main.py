@@ -15,7 +15,7 @@ def genai_upload(file_path):
     return file
 
 def generate_response(caption, file):
-    response = model.generate_content([file, f"\n\nThis image is from an instagram post and contains a product. Generate a SEO-friendly and user-centric Amazon product listing for it. The following is the post's caption - '{caption}'"])
+    response = model.generate_content([file, f"\n\nThis image is from an instagram post and contains a product. Generate a SEO-friendly and user-centric Amazon product listing for it. Dont write any additional instructions or suggestions other than the actual product listing. The following is the post's caption - '{caption}'"])
     return response.text
 
 # response = model.generate_content(["/uploads/smartwatch.jpg", "This image is from an instagram post and contains a product. Generate a SEO-friendly and user-centric Amazon product listing for it. The following is the post's caption - 'Apple Watch Series 7 \nRs. 49,900 \nFeatures: Wifi 5 support, sleep tracking, blood oxygen monitor, heart rate monitor.'"])
